@@ -7,4 +7,4 @@ Collection of daily warm up mini-project.
 
 ## Projects
 
-1. [Calculator](./calculator): 29-06-2022 (50min)
+1. [Calculator](./calculator): <strike>29-06-2022</strike> 12-06-2023 (50min)
