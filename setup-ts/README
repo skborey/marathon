@@ -2,6 +2,8 @@
 
 - Node `v18.19.0`
 
+### Basic Setup
+
 1. Initialize project
 ```bash
 npm init --yes
@@ -28,7 +30,7 @@ skipLibCheck: true
 forceConsistentCasingInFileNames: true
 ```
 
-4. Setup the run commands in `package.json`
+4. Add commands in `package.json`
 
 ```json
 {
@@ -47,5 +49,27 @@ _Remember that `dist` is compiled folder that we can config or rename in the `ts
   "compilerOptions": {
     "outDir": "./dist"
   }
+}
+```
+
+### Test Setup
+
+5. Install dependencies
+
+```bash
+npm i -D jest ts-jest @types/jest
+```
+
+6. Generate `jest` configuration to run with typescript
+
+```bash
+npx ts-jest config:init
+```
+
+7. Add commands in `package.json`
+
+```json
+"scripts": {
+  "test": "jest"
 }
 ```

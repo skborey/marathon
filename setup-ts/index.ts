@@ -1,10 +1,10 @@
-const greetingWorldMessage = (name?: string): string => {
+export const greetingWorldMessage = (name?: string): string => {
   return `Hello world!${name?"I'm "+name:""}`
 }
 
-const printMessage = (msg: string): void => {
+export const printMessage = (msg: string): void => {
   console.log(msg)
 }
 
-printMessage(greetingWorldMessage())
-printMessage(greetingWorldMessage("human"))
+// printMessage(greetingWorldMessage())
+// printMessage(greetingWorldMessage("human"))
