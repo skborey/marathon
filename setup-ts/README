@@ -1,0 +1,77 @@
+# Step by Step
+
+- Node `v18.19.0`
+
+### Basic Setup
+
+1. Initialize project
+```bash
+npm init --yes
+```
+
+2. Install dependencies
+
+```bash
+npm install -D typescript ts-node-dev nodemon
+```
+
+3. Generate `tsconfig.json`
+```bash
+npx tsc --init
+```
+
+_Default compiler come within the above command:_
+```yaml
+target: es2016
+module: commonjs
+strict: true
+esModuleInterop: true
+skipLibCheck: true
+forceConsistentCasingInFileNames: true
+```
+
+4. Add commands in `package.json`
+
+```json
+{
+  "scripts": {
+    "build": "npx tsc",
+    "start": "node dist/index.js",
+    "dev": "nodemon index.ts"
+  }
+}
+```
+
+_Remember that `dist` is compiled folder that we can config or rename in the `tsconfig.json` file_
+
+```json
+{
+  "compilerOptions": {
+    "outDir": "./dist"
+  }
+}
+```
+
+### Test Setup
+
+5. Install dependencies
+
+```bash
+npm i -D jest ts-jest @types/jest
+```
+
+6. Generate `jest` configuration to run with typescript
+
+```bash
+npx ts-jest config:init
+```
+
+7. Add commands in `package.json`
+
+```json
+"scripts": {
+  "test": "jest"
+}
+```
+
+> Questions: Should we run test on the compile code or run on the development code?
