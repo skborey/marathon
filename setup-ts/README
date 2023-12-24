@@ -73,3 +73,5 @@ npx ts-jest config:init
   "test": "jest"
 }
 ```
+
+> Questions: Should we run test on the compile code or run on the development code?
