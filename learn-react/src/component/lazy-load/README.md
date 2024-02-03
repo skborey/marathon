@@ -1,5 +1,9 @@
 ### Lazy Load
 
+It is the React API, that lets defer loading component’s code until it is rendered for the first time.
+
+#### Example
+
 ```js
 <>
   <button onClick={showLazyComponent}>Lazy Detail</button>
