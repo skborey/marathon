@@ -1,7 +1,7 @@
 import { Suspense, lazy, useState } from "react";
 import Detail2 from "./Detail2";
 
-const Detail1 = lazy(() => import("./Detail"));
+const Detail1 = lazy(() => import("./Detail1"));
 
 const LazyLoad = () => {
   const [toggle, setToggle] = useState(null);
@@ -11,7 +11,7 @@ const LazyLoad = () => {
   };
   return (
     <>
-      <button onClick={showLazyComponent}>Lazy Detail</button>
+      <button onClick={showLazyComponent}>Show Detail</button>
       {toggle && (
         <Suspense fallback={<div>Loading...</div>}>
           <Detail1 />

@@ -12,8 +12,12 @@
 </>
 ```
 
-- When load the first time, both `Detail1` and `Detail2` is not show yet - until user click `Lazy Detail` button.
-- However, the different is `Detail2` code is ready include in the `bundle.js` (that is already download in the application first start), while `Detail1` code is separated into another file `src_component_lazy-load_Detail_jsx.chunk.js` that is not downloaded yet in the first start.
-- After user clicks the button to show the detail, `Detail1` is needed to render, so `Detail1` is downloaded from server, while `Detail2` code is already in client side.
+- In the example code, when application load at the first time, both `Detail1` and `Detail2` are not rendered yet. Both are rendered when user click `Show Detail` button.
+- However, the different in the application already loaded is that:
+  - `Detail1` code is not in the client side yet. The code is in separated file _src_component_lazy-load_Detail1_jsx.chunk.js_ which is still in the server.
+  - `Detail2` code is already in the client side. The code is in _bundle.js_ as we see in the image.
+- When user clicks the "Show Detail" button, both components are needed to render. Thus:
+  - `Detail1` is downloaded. Meanwhile, the fallback component will be rendered instead, until "Detail1" is completed download and render later on.
+  - `Detail2` render immediately.
 
 ![Lazy Load example](../../../doc/lazy-load.png)
